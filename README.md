@@ -111,6 +111,8 @@ We **highly recommend** to run PaddleFL in Docker
 docker pull paddlepaddle/paddlefl:1.1.2
 docker run --name <docker_name> --net=host -it -v $PWD:/paddle <image id> /bin/bash
 
+docker run --name paddle_exp --net=host -it -v $PWD:/paddle paddlepaddle/paddlefl:1.1.2 /bin/bash
+
 ```
 
 2. Install PaddleFL via installation package

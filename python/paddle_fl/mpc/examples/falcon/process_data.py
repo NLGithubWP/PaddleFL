@@ -50,8 +50,8 @@ def generate_encrypted_train_data(mpc_data_dir, class_num):
                 raise ValueError("class_num should be 2 or 10, but received {}.".format(class_num))
             yield mpc_du.make_shares(label)
 
-    mpc_du.save_shares(encrypted_mnist_features, mpc_data_dir + "bank_market{}_feature".format(class_num))
-    mpc_du.save_shares(encrypted_mnist_labels, mpc_data_dir + "bank_market{}_label".format(class_num))
+    mpc_du.save_shares(encrypted_mnist_features, mpc_data_dir + "bank_market_{}_feature".format(class_num))
+    mpc_du.save_shares(encrypted_mnist_labels, mpc_data_dir + "bank_market_{}_label".format(class_num))
 
 
 def generate_encrypted_test_data(mpc_data_dir, class_num, label_mnist_filepath):
@@ -83,8 +83,8 @@ def generate_encrypted_test_data(mpc_data_dir, class_num, label_mnist_filepath):
                 raise ValueError("class_num should be 2 or 10, but received {}.".format(class_num))
             yield mpc_du.make_shares(label)
 
-    mpc_du.save_shares(encrypted_mnist_features, mpc_data_dir + "bank_market{}_test_feature".format(class_num))
-    mpc_du.save_shares(encrypted_mnist_labels, mpc_data_dir + "bank_market{}_test_label".format(class_num))
+    mpc_du.save_shares(encrypted_mnist_features, mpc_data_dir + "bank_market_{}_test_feature".format(class_num))
+    mpc_du.save_shares(encrypted_mnist_labels, mpc_data_dir + "bank_market_{}_test_label".format(class_num))
 
 
 def load_decrypt_data(filepath, shape):
@@ -212,7 +212,6 @@ if __name__ == '__main__':
     all_data = read_a_file("./falcon/bank_marketing_data/bank.data.norm")
     train_dataset, test_dataset = split_train_test(all_data, 0.8)
     print(f"data partitioned, train:test = {len(train_dataset)/len(all_data)}: {len(test_dataset)/len(all_data)}")
-
 
     import numpy as np
     import six
