@@ -99,7 +99,7 @@ def reading_dataset(pargs, mpc_du, place):
     # test_reader
     test_feature_reader = mpc_du.load_shares(
         os.path.join(pargs.mpc_data_dir, f"{pargs.dataset_name}_2_test_feature"),
-        id=pargs.role, shape=(16,))
+        id=pargs.role, shape=(pargs.feature_num,))
     test_label_reader = mpc_du.load_shares(
         os.path.join(pargs.mpc_data_dir, f"{pargs.dataset_name}_2_test_label"),
         id=pargs.role, shape=(1,))
